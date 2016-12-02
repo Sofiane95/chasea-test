@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sofiane SLAIM </title>
+<style>
+
+.redim{max-width: 100%;}
+</style>
+
+</head>
+
+<body>
+<center>
+<h1> Affichage retina ou non</h1>
+<!-- Image basique-->
+<img src="vert.jpg" width="200" height="200" class="retina">   
+
+<!-- script permettant de detecter la densité de l'écran et d'y remplacer une photo plus adapté (pour un meilleur rendu)-->
+<script type="text/javascript">  
+   (function($){  
+       
+     if(window.devicePixelRatio > 1.5){  
+       $('.retina').each(function(){  
+         var img = $(this);  
+         img.attr('src', img.attr('src').replace('.','@2x.'));   
+       })  
+     }  
+
+   })(jQuery);  
+ </script>  
+ 
+ 
+ <br>
+<br>
+
+<h1> Redimensionner</h1>
+<img class="redim" src="planet.jpeg" />
+
+<br>
+<br>
+<h1>Non redimensionné</h1>
+
+<img  src="planet.jpeg" />
+</center>
+
+</body>
+</html>
